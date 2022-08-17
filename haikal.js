@@ -5334,7 +5334,7 @@ jpegThumbnail:log0,
 caption: `
 ◎ Lib : Multi-Device
 ◎ Terbit : *18-07-2022*
-◎ Owner : 085714170944
+◎ Owner : +6285293190009
 
 [ 🇲🇨 Ini adalah Bot Pribadi Tekan Link Di Bawah Untuk Bergabung ]`,
 footer: '© 𝗚𝘆𝘇𝘅𝗼-666-Fallen',
@@ -5356,9 +5356,9 @@ jpegThumbnail:log0,
 caption: `
 ◎ Lib : Multi-Device
 ◎ Terbit : *18-07-2022*
-◎ Owner : 085293190009
+◎ Owner : +6285293190009
 
-🇲🇨 *Hello My Name Hw Mods Bot
+🇲🇨 *Hello My Name Anti Bot
 Which number do you want banned?? Please Click the Button Below*`,
 footer: '© 𝗚𝘆𝘇𝘅𝗼-666-Fallen',
 templateButtons: templateButtons
