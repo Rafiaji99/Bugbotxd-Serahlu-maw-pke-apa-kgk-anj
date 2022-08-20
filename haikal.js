@@ -5300,7 +5300,7 @@ m.reply('Pilih on atau off')
 break
 
 
-
+/*
 
 
 //====================// Re-Coded by Fantox// =====================// 
@@ -5345,7 +5345,7 @@ case 'autoreadall': {
 
 
 
-
+*/
 
 //=================================================//
 case 'autoavailable': {
