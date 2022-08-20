@@ -3342,6 +3342,45 @@ throw `Kirim Gambar/Video Dengan Caption ${prefix + command}\nDurasi Video 1-9 D
 }
 }
 break
+
+//=================================================//
+
+case 'swm': case 'take': case 'stickerwm': case 'steal':{
+    if (isBan) return reply(mess.banned)
+    if (isBanChat) return reply(mess.bangc)
+if (!args.join(" ")) return reply(`Use command: steal Fallen Angel`)
+const swn = args.join(" ")
+const pcknm = swn.split("|")[0];
+const atnm = swn.split("|")[1];
+if (m.quoted.isAnimated === true) {
+haikal.downloadAndSaveMediaMessage(quoted, "gifee")
+haikal.sendMessage(from, {sticker:fs.readFileSync("gifee.webp")},{quoted:m})
+} else if (/image/.test(mime)) {
+let media = await quoted.download()
+let encmedia = await haikal.sendImageAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
+await fs.unlinkSync(encmedia)
+} else if (/video/.test(mime)) {
+if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 seconds is allowed!')
+let media = await quoted.download()
+let encmedia = await haikal.sendVideoAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
+await fs.unlinkSync(encmedia)
+} else {
+reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 seconds is allowed!`)
+}
+}
+break
+
+
+
+
+
+
+
+
+
+
+
+
 //=================================================//
 case 'ebinary': {
 if (isBan) throw sticBanLu(from)
@@ -5548,8 +5587,6 @@ Hay Kak ${pushname} 👋
 ▬▭▬▭▬▭▬▭▬▬▭▬▭▬
 [ autovn = on / off ]
 [ autoketik = on / off ]
-[ autoreadgc = on / off ]
-[ autoreadall = on / off ]
 [ autoavailable = on / off ]
 [ mute on / off ]
 [ antilink on / off ]
