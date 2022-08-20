@@ -5,7 +5,6 @@
 🌷 KALAU MAU RENAME TARO CREDITS GUA : Fallen */
 
 //=================================================//
-
 require('./hwkal')
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
 const fs = require('fs')
@@ -357,6 +356,8 @@ ano = fs.readFileSync('./baseikal/stickernye/SiGroupadmin.webp')
 haikal.sendImageAsSticker(m.chat, ano, m, { packname: global.packname, author: global.author })
 }
 //=================================================//
+
+/*
 if(autorecording){
 if(autorecording == true)
 await haikal.sendPresenceUpdate('recording', m.chat)
@@ -374,7 +375,7 @@ if(autoReadAll == true)
 await haikal.sendReadReceipt(m.chat, m.sender, [m.key.id])
 }
 
-/*
+*/
 if (global.autoreadpmngc) {
     if (command) {
     await haikal.sendPresenceUpdate('composing', m.chat)
@@ -388,16 +389,16 @@ if (global.autoreadpmngc) {
       if (global.autoReadAll) { if (m.chat) { haikal.sendReadReceipt(m.chat, m.sender, [m.key.id]) }
       }
     
-        if (global.autoRecord) { if (m.chat) { haikal.sendPresenceUpdate('recording', m.chat) }
+        if (global.autorecording) { if (m.chat) { haikal.sendPresenceUpdate('recording', m.chat) }
     }
     
-      if (global.autoTyping) { if (m.chat) { haikal.sendPresenceUpdate('composing', m.chat) }
+      if (global.autoketik) { if (m.chat) { haikal.sendPresenceUpdate('composing', m.chat) }
     }
     
       if (global.available) { if (m.chat) { haikal.sendPresenceUpdate('available', m.chat) }
       }
 
-*/
+
 
 //=================================================//
 // Mute Chat
