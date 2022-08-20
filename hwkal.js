@@ -10,7 +10,7 @@ global.autoketik = false //status auto mengetik (auto typing)
 global.available = true //status online (online)
 
 global.autoReadGc = true // Auto group message reading (true = enable)
-global.autoReadAll = false // // Auto group message reading (disabled)
+global.autoReadAll = true // // Auto all message reading (enabled)
 
 
 
