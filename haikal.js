@@ -3346,8 +3346,7 @@ break
 //=================================================//
 
 case 'swm': case 'take': case 'stickerwm': case 'steal':{
-    if (isBan) return reply(mess.banned)
-    if (isBanChat) return reply(mess.bangc)
+
 if (!args.join(" ")) return reply(`Use command: steal Fallen Angel`)
 const swn = args.join(" ")
 const pcknm = swn.split("|")[0];
