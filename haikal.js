@@ -357,15 +357,47 @@ haikal.sendImageAsSticker(m.chat, ano, m, { packname: global.packname, author: g
 }
 //=================================================//
 if(autorecording){
-if(autorecording == false)
+if(autorecording == true)
 await haikal.sendPresenceUpdate('recording', m.chat)
 } else if(autoketik){
-if(autoketik == false)
+if(autoketik == true)
 await haikal.sendPresenceUpdate('composing', m.chat)
 } else if(available){
-if(available == false)
+if(available == true)
 await haikal.sendPresenceUpdate('available', m.chat)
+}else if(autoReadGc){
+if(autoReadGc == true)
+await haikal.sendReadReceipt(m.chat, m.sender, [m.key.id])
+}else if(autoReadAll){
+if(autoReadAll == true)
+await haikal.sendReadReceipt(m.chat, m.sender, [m.key.id])
 }
+
+/*
+if (global.autoreadpmngc) {
+    if (command) {
+    await haikal.sendPresenceUpdate('composing', m.chat)
+    haikal.sendReadReceipt(from, m.sender, [m.key.id])}
+    }
+    
+      if (global.autoReadGc) {
+      if (m.isGroup) { haikal.sendReadReceipt(m.chat, m.sender, [m.key.id]) }
+    }
+    
+      if (global.autoReadAll) { if (m.chat) { haikal.sendReadReceipt(m.chat, m.sender, [m.key.id]) }
+      }
+    
+        if (global.autoRecord) { if (m.chat) { haikal.sendPresenceUpdate('recording', m.chat) }
+    }
+    
+      if (global.autoTyping) { if (m.chat) { haikal.sendPresenceUpdate('composing', m.chat) }
+    }
+    
+      if (global.available) { if (m.chat) { haikal.sendPresenceUpdate('available', m.chat) }
+      }
+
+*/
+
 //=================================================//
 // Mute Chat
 if (db.data.chats[m.chat].mute && !isAdmins && !isCreator) {
@@ -5266,6 +5298,55 @@ m.reply('Pilih on atau off')
 }
 }
 break
+
+
+
+
+
+//====================// Re-Coded by Fantox// =====================// 
+
+case 'autoreadgc': {
+    if (!isCreator) throw sticOwner(from)
+    if (isBan) throw sticBanLu(from)
+    if (args.length < 1) return m.reply(`AutoRead GC on untuk mengaktifkan\nAutoRead GC off untuk menonaktifkan`)
+    if (args[0] === 'on') {
+    if (autoreadgc === true) return
+    global.autoReadGc = true
+    m.reply(`Berhasil mengaktifkan AutoRead GC!`)
+    } else if (args[0] === 'off') {
+    if (autoreadgc === false) return
+    global.autoReadGc = false
+    m.reply(`Berhasil menonaktifkan AutoRead GC!`)
+    } else {
+    m.reply('Pilih on atau off')
+    }
+    }
+    break
+
+
+
+case 'autoreadall': {
+    if (!isCreator) throw sticOwner(from)
+    if (isBan) throw sticBanLu(from)
+    if (args.length < 1) return m.reply(`AutoRead all on untuk mengaktifkan\nAutoRead all off untuk menonaktifkan`)
+    if (args[0] === 'on') {
+    if (autoreadall === true) return
+    global.autoReadAll = true
+    m.reply(`Berhasil mengaktifkan AutoRead all!`)
+    } else if (args[0] === 'off') {
+    if (autoreadall === false) return
+    global.autoReadAll = false
+    m.reply(`Berhasil menonaktifkan AutoRead all!`)
+    } else {
+    m.reply('Pilih on atau off')
+    }
+    }
+    break
+
+
+
+
+
 //=================================================//
 case 'autoavailable': {
 if (!isCreator) throw sticOwner(from)
@@ -5465,6 +5546,8 @@ Hay Kak ${pushname} 👋
 ▬▭▬▭▬▭▬▭▬▬▭▬▭▬
 [ autovn = on / off ]
 [ autoketik = on / off ]
+[ autoreadgc = on / off ]
+[ autoreadall = on / off ]
 [ autoavailable = on / off ]
 [ mute on / off ]
 [ antilink on / off ]
