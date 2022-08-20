@@ -8,6 +8,12 @@ global.ntnsfww = []
 global.autorecording = false //status auto merekam ( auto record )
 global.autoketik = false //status auto mengetik (auto typing)
 global.available = true //status online (online)
+
+global.autoReadGc = true // Auto group message reading (true = enable)
+global.autoReadAll = false // // Auto group message reading (disabled)
+
+
+
 //gausah di apa² in!
 global.flaming = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
 global.fluming = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=fluffy-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
